@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kargey SkyNet</title>
+    <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#upload">Image Upload</a></li>
+            <li><a href="#anomaly">Anomaly Detection</a></li>
+        </ul>
+    </nav>
+
+    <section id="about" class="hero">
+        <div class="hero-text">
+            <h1>Kargey SkyNet</h1>
+        </div>
+    </section>
+
+    <section class="about-us">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>
+                We chose to tackle the task “Anomaly Detection for Thermal Drone Footage and Visual Inspection". We were able to finetune a PaDiM model on the provided dataset using the library anomalib. This is a state of the art model for anomaly detection, which only requires the “normal” images in order to classify “anomalous” images. Team Member 1 (Karim) mainly worked on the fine-tuning aspect, trying to conquer the beast that is anomalib’s documentation, with hidden pages and links that point to nowhere. Team Member 2 (Sergey) mainly worked on the frontend and backend of the web interface, dedicating his time to making the app useable and responsive, and cleaning up Karim’s mess.
+            </p>
+        </div>
+    </section>
+
+    <section id="upload" class="uploadSection">
+        <div class="uploadContainer">
+            <!-- Sidebar -->
+            <div id="sidebar">
+                <button id="uploadButton" onclick="uploadImage()">Upload Infrared Images</button>
+                <div style="display: none;" id="image-gallery">
+                    <button id="uploadMoreButton" onclick="uploadMore()">Upload Infrared Images</button>
+                    <button id="clearAllButton" onclick="clearImages()">Clear Upload</button>
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div id="image-display", class="imgUpload">
+                <!-- Container for uploaded images -->
+                <a class="anomalyHeaders">Upload Infrared Data</a>
+                <div id="uploadedImages"></div> 
+                <button class="action-button" onclick="viewImages()">More Images ...</button>
+            </div>
+        </div>
+        
+    </section>
+
+    <section id="anomaly" class="anomalySection">
+        <div class="anomalyContainer">
+            <!-- Sidebar -->
+            <div id="sidebarAnomaly">
+                <button id="clearAllButton" onclick="clearAnomal()">Clear Anomaly</button>
+                <button id="clearAllButton" onclick="clearUnusual()">Clear Ambiguous</button>
+                <button id="clearAllButton" onclick="clearNormal()">Clear Normal</button>
+            </div>
+
+            <!-- Content -->
+            <div></div>
+            <div id="image-display">
+                <a class="anomalyHeaders">Anomalies Detected</a>
+                <div id="anomalyFolder"></div>
+                <button class="action-button" onclick="viewImagesAnomal()">More Images ...</button>
+                <a class="anomalyHeaders">Ambiguous Detections</a>
+                <div id="unsureFolder"></div>
+                <button class="action-button" onclick="viewImagesUnsure()">More Images ...</button>
+                <a class="anomalyHeaders">Normal Detections</a>
+                <div id="normalFolder"></div>
+                <button class="action-button" onclick="viewImagesNormal()">More Images ...</button>
+            </div>    
+            
+        </div>
+    </section>
+
+    <!-- 
+    <section id="locations" class="mainSections">
+        <div class="container">
+            <h2>Locations</h2>
+            <p>(Content coming soon...)</p>
+        </div>
+    </section>
+    Content -->
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+
+</body>
+</html>

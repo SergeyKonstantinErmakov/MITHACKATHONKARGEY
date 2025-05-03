@@ -1,0 +1,274 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 2.2;
+    scroll-behavior: smooth;
+    color: #eaeaea;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    background-color: #1f2833;
+    padding: 10px 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar li {
+    margin: 0 70px;
+}
+
+.navbar a {
+    color: #eaeaea;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s;
+    padding-bottom: 4px;
+}
+
+.navbar a:hover,
+.navbar a:focus {
+    color: #e63946;
+    transition: color 0.3s;
+}
+
+.hero {
+    background: url('/banner.png') center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #eaeaea;
+    text-align: center;
+}
+
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -5%;
+    left: 0%;
+    width: 100%;
+    height: 120%;
+    background: url('/banner.png') center/cover no-repeat;
+    filter: blur(4px) brightness(50%);
+    z-index: 1;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-text h1 {
+    font-size: 100px;
+    padding: 20px;
+}
+
+.about-us, .mainSections {
+    padding: 60px 30px;
+    background-color: #1f2833;
+    color: #eaeaea;
+}
+
+.uploadSection {
+    background-color: #171e24;
+    color: #eaeaea;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.imgUpload {
+    margin: 0px 0px 0px 40px;
+}
+
+/* Flexbox for anomaly section */
+.uploadContainer {
+    display: flex;
+    flex-wrap: wrap;
+    /*justify-content: space-between;*/
+    width: 100%;
+    margin: 40px 20px 20px 60px;
+}
+
+.anomalySection {
+    background-color: #101418;
+    color: #eaeaea;
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+}
+
+/* Flexbox for anomaly section */
+.anomalyContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 90%;
+    margin: 50px auto;
+}
+
+.container {
+    text-align: center;
+    align-items: center;
+    margin: 20px 300px 20px 300px;
+}
+
+/* Sidebar Styles */
+#sidebar, #sidebarAnomaly {
+    width: 25%;
+    color: #eaeaea;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+
+#sidebarAnomaly {
+    height: 100%;
+}
+
+
+#sidebar button, #sidebarAnomaly button {
+    background-color: #1f2833;
+    color: #e63946;
+    padding: 10px 20px;
+    margin: 30px 5px 5px 5px;
+    border: 2px solid #e63946;
+    cursor: pointer;
+    font-size: 20px;
+    width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#sidebar button:hover, #sidebarAnomaly button:hover {
+    color: #eaeaea;
+    border: 2px solid #eaeaea;
+    transition: color 0.5s; /* Smooth transition for hover effect */
+    transition: border 0.5s; /* Smooth transition for hover effect */
+       
+}
+
+/* Data Table Styling */
+.data-display {
+    background-color: rgba(30, 30, 30, 0.0); /* Transparent background */
+    overflow-y: auto;
+}
+
+.data-display table {
+    width: 300px;
+    border-collapse: collapse;
+    border: 2px solid #e63946; 
+    color: #eaeaea;
+    margin: 120px 0px 0px 0px;
+}
+
+.data-display th, .data-display td {
+    padding: 12px;
+    text-align: left;
+}
+
+.data-display th {
+    background-color: #1f2833; /* Darker background for header */
+    color: #eaeaea;
+}
+
+.data-display tr:nth-child(even) {
+    background-color: #2a2a2a; /* Alternating row colors */
+}
+
+.data-display tr:hover {
+    background-color: #6d8a96; /* Hover effect for rows */
+    color: #eaeaea;
+}
+
+.data-display td {
+    border-bottom: 1px solid #6d8a96;
+}
+
+/* Content Styles (for images) */
+#image-display {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.anomalyHeaders {
+    font-size: 35px;
+    color: #eaeaea;
+    margin-bottom: 20px;
+}
+
+#uploadedImages, #anomalyFolder, #unsureFolder, #normalFolder {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+    width: 100%; /* Makes sure the images take up most of the space */
+}
+
+/* Image Styling */
+#uploadedImages img, #anomalyFolder img, #unsureFolder img, #normalFolder img {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Shadow effect to make the images appear floating */
+}
+
+/* Hover Effect */
+#uploadedImages img:hover, #anomalyFolder img:hover, #unsureFolder img:hover, #normalFolder img:hover {
+    transform: scale(1.1); /* Enlarge the image by 10% */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4); /* Increase the shadow when hovering */
+}
+
+.action-button {
+    background-color: transparent;
+    color: #eaeaea;
+    padding: 5px 5px;
+    /*border: 2px solid #e63946;*/
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    width: 150px;
+    transition: background-color 0.3s ease;
+    text-align: left;
+}
+
+.action-button:hover{
+    color: #e63946;
+    transition: color 0.5s; /* Smooth transition for hover effect */
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .uploadContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #sidebar {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    #image-display {
+        width: 100%;
+    }
+}

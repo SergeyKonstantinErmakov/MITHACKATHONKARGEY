@@ -1,0 +1,62 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #1f2833;
+    color: #eaeaea;
+    text-align: center;
+    padding: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery img {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition for smooth effect */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Default shadow for images */
+}
+
+.gallery img:hover {
+    transform: scale(1.1); /* Makes the image bigger when hovered */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4); /* Increases shadow on hover */
+}
+
+/* Remove image borders */
+.gallery img {
+    border: none;
+}
+
+button {
+    background-color: #1f2833;
+    color: #6d8a96;
+    padding: 10px 20px;
+    border: 2px solid #6d8a96;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+button:hover {
+    color: #e63946;
+    border: 2px solid #e63946;
+    transition: color 0.3s;
+    transition: border 0.1s;
+}
